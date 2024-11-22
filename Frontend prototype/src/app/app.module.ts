@@ -1,54 +1,56 @@
+import { BookingModule } from './booking.module';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorInterceptor } from './errorintereptor';
+import { AuthGuard } from './guards/auth.guard';
+import { BookedGuard } from './guards/booked.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ModalModule } from 'ngx-bootstrap';
-import {FormsModule} from '@angular/forms';
-import {RouterModule,Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { HeaderComponent } from './user/header/header.component';
-import { FooterComponent } from './user/footer/footer.component';
-import { SelectBusComponent } from './user/select-bus/select-bus.component';
-import { SelectSeatComponent } from './user/select-seat/select-seat.component';
-import { BusSearchResultComponent } from './user/bus-search-result/bus-search-result.component';
-import { SelectBusService } from './user/services/selectBus.service';
-import { UserFormComponent } from './user/user-form/user-form.component';
-import { BookingService } from './user/services/booking.service';
-import { UserService } from './user/services/user.service';
-import { PrintComponent } from './user/print/print.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
-const userRoute:Routes=[
-{path:'',component:SelectBusComponent},
-{path:'search',component:BusSearchResultComponent},
-{path:'user-form',component:UserFormComponent},
-{path:'print',component:PrintComponent},
-
-]
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
+import { CreateRouteComponent } from './create-route/create-route.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { RouteService } from './services/routes.service';
+import { AvailableRoutesComponent } from './available-routes/available-routes.component';
+import { ErrorComponent } from './error/error.component';
+import { SharedModule } from './shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    HeaderComponent,
+    NavbarComponent,
+    HomeComponent,
     FooterComponent,
-    SelectBusComponent,
-    SelectSeatComponent,
-    BusSearchResultComponent,
-    UserFormComponent,
-    PrintComponent
+    LoginComponent,
+    CreateRouteComponent,
+    AvailableRoutesComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(userRoute),
+    NgbModule,
+    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
-    ModalModule.forRoot(),
-    FormsModule
+    BookingModule,
+    SharedModule,
+    BrowserAnimationsModule
   ],
-  providers: [
-    SelectBusService,
-    BookingService,
-    UserService
-  ],
+  providers: [AuthService, RouteService, BookedGuard, AuthGuard,
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: ErrorInterceptor,
+                multi: true
+              }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
