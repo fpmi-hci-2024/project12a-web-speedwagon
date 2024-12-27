@@ -1,0 +1,162 @@
+<table class="table">
+  <tr>
+<div class="landing-main">
+
+    <div class="search-section">
+      <input class="search-input" style="width: 18%" type="text" placeholder="Откуда?" />
+      <input class="search-input" style="width: 18%" type="text" placeholder="Куда?" />
+      <input class="search-input" style="width: 18%" type="date" />
+      <select class="search-input" style="width: 18%">
+        <option>1 Пассажир</option>
+        <option>2 Пассажира</option>
+        <option>3 Пассажира</option>
+        <option>4 Пассажира</option>
+        <option>5 Пассажиров</option>
+        <option>6 Пассажиров</option>
+        <option>7 Пассажиров</option>
+        <option>8 Пассажиров</option>
+        <option>9 Пассажиров</option>
+        <option>10 Пассажиров</option>
+        <option>11 Пассажиров</option>
+        <option>12 Пассажиров</option>
+        <option>13 Пассажиров</option>
+        <option>14 Пассажиров</option>
+        <option>15 Пассажиров</option>
+      </select>
+      <button class="search-button" style="width: 20%">{{ getTranslation('Find') }}</button>
+    </div>
+  </div>
+</tr>
+  <tr>
+    <div class="app-info">
+
+      <table style="width: 40%; min-width: 800px;">
+        <tr columnspan="2">     <h2 style="text-align: center;">Доступно Мобильное Приложение</h2>
+          <p style="text-align: center;">Все ваши билеты прямо в телефоне!</p> </tr>
+        <tr>
+        <td><h3>Экономия</h3>
+        <p>
+          Наши технологии позволяют увеличивать эффективность работы наших
+          партнеров. Поэтому мы можем делать цены ниже.
+        </p></td>
+        <td rowspan="3"><img
+          src="../../../assets/mobile.png"
+          alt="Мобильное приложение"
+          class="app-image"
+        />
+        <img
+        src="../../../assets/googleplay.webp"
+        alt="Google Play"
+        class="app-image"
+      />
+      <img
+      src="../../../assets/appstore.webp"
+      alt="App Store"
+      class="app-image"
+    />
+  </td>
+      </tr>
+        <tr>
+          <td><h3>Широкий выбор маршрутов</h3>
+            <p>
+              От коротких маршрутов до дальних путешествий. Независимо от места
+              назначения — мы поможем найти идеального перевозчика.
+            </p></td>
+        </tr>
+        <tr>
+          <td><h3>Поддержка 24/7</h3>
+            <p>
+              Напишите нам в чат или позвоните по телефону, наши операторы
+              ответят вам на все вопросы.
+            </p></td>
+        </tr>
+      </table>
+    </div>
+  </tr>
+<tr>
+
+  <footer class="landing-footer">
+    <div class="footer-links">
+      <div>
+        <h3 style="color: white; ">SpeedWagon</h3>
+        <ul style="color: white; ">
+          <li>О нас</li>
+          <li>Помощь</li>
+          <li>Политика конфиденциальности</li>
+          <li>Контакты</li>
+          <li>Настройка cookie-файлов</li>
+          <li>Условия пользования</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: white;">Сотрудничество</h3>
+        <ul style="color: white;">
+          <li>Стать партнером</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: white;">Прочее</h3>
+        <ul style="color: white;">
+          <li>Для водителей</li>
+          <li>Вакансии</li>
+        </ul>
+      </div>
+      <div class="Social-icons">
+        <h3 style="color: white;">Социальные сети</h3>
+          <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/vkontakte.png"
+            alt="VK"
+            class="SN"/>
+          </a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/telegram.png"
+            alt="Telegram"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/youtube.png"
+            alt="YouTube"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/tiktok.png"
+            alt="Tiktok"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/instagram.png"
+            alt="Instagram"
+            class="SN"
+          /></a>
+      </div>
+    </div>
+    <div style="  flex-grow: 1;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;"><div class="centered-line"></div></div>
+    
+
+    <table style="  flex-grow: 1;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;">
+    <tr><td>
+    <div style="color: white;"><p>2024 © SpeedWagon. Все права защищены.</p></div>
+    </td><td>
+    <div class="language-container">
+      <button class="language-button2" (click)="toggleLanguageMenu()">
+        {{ getTranslation('Language') }}<img src="../../../assets/icons/triangle.png"
+        alt="Instagram"
+        style="width: 24px; height: 24px;"
+      />
+      </button>
+      <div *ngIf="showLanguageMenu" class="dropdown-menu">
+        <button class="language-button" (click)="changeLanguage('ru')">{{ getTranslation('Русский') }}</button>
+        <button class="language-button" (click)="changeLanguage('by')">{{ getTranslation('Белорусский') }}</button>
+        <button class="language-button" (click)="changeLanguage('en')">{{ getTranslation('English') }}</button>
+      </div>  
+    </div>
+    </td>
+    </tr>
+    </table>
+  </footer>
+</tr>
+</table>

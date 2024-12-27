@@ -1,0 +1,39 @@
+<p>hi1</p>
+<!-- <div style="display: block"><table  class="math-table">
+  <tbody>
+    <tr>
+      <td>
+        <button class="btn-choice" (click)="changeCalc('BA')">{{ getTranslation('Basic arithmetics') }}</button>
+      </td>
+      <td>
+        <button class="btn-choice" (click)="changeCalc('Eq')">{{ getTranslation('Equations') }}</button>
+      </td>
+      <td>
+        <button class="btn-choice" (click)="changeCalc('M')">{{ getTranslation('Matrix') }}</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <div [ngSwitch]="selectedCalculations">
+          <span *ngSwitchCase="'BA'">
+            <app-basic-arithemtic-component (resultEvent)="showResult($event)"></app-basic-arithemtic-component>
+            </span>
+            <span *ngSwitchCase="'Eq'" >
+              <app-equation-component (resultEvent)="showResult($event)"></app-equation-component>
+              </span>
+            <span  *ngSwitchCase="'M'">           
+                <app-matrix-component (resultEventM)="showResult($event)"></app-matrix-component>
+            </span>
+          
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div name="result" class="result-container" *ngIf="calculationResult !== ''">
+  <p>{{ getTranslation('Result') }}: {{ calculationResult }}</p>
+  <p>{{ getTranslation('Time') }}: {{ calculationTime }} {{ getTranslation('Sec') }}</p>
+</div>
+</div> -->
