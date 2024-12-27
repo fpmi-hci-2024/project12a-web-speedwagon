@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { LanguageService } from '../../services/language.service';
+import {Reservation} from "../../interfaces/models/Reservation";
+import {ReservationService} from "../../services/reservation.service";
 @Component({
   selector: 'app-reservations-component',
   templateUrl: './reservations.component.html',
@@ -12,16 +14,20 @@ export class ReservationsComponent {
   isInputFocused: boolean = false;
   calculationResult: string | undefined;
   calculationTime: number | undefined;
-  
+
 inputError: string = '';
   constructor(
     private router: Router,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private reservationService: ReservationService
   ) { }
  ngOnInit() {
     this.languageService.languageChanged.subscribe(() => {
       this.languageChangedCallback();
     });
+
+   this.fetchUserReservations();
+
     const userId: string = localStorage.getItem('userId') as string;
     var userIdNum = parseInt(userId);
     console.log(userId)
@@ -90,7 +96,7 @@ inputError: string = '';
     //     }
     //   },
     //   error => {
-    //     console.log(error.error.error);        
+    //     console.log(error.error.error);
     //   }
     //)
   }
@@ -105,5 +111,20 @@ inputError: string = '';
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('email');
+  }
+
+  reservations: Reservation[] = [];
+
+  fetchUserReservations(): void {
+    const userId = Number(localStorage.getItem('userId')); // Получение ID пользователя
+    this.reservationService.getReservationsByUserId(userId).subscribe({
+      next: (data) => {
+        this.reservations = data;
+        console.log('Запланированные поездки загружены:', data);
+      },
+      error: (err) => {
+        console.error('Ошибка при загрузке запланированных поездок:', err);
+      },
+    });
   }
 }
