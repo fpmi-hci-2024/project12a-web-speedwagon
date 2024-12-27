@@ -1,0 +1,86 @@
+<div class="center-content">
+<form [formGroup]="registerForm" (ngSubmit)="submitDetails()" class="orange-form">
+  <p-card header="{{ getTranslation('Create an account') }}" [style]="{ width: '360px' }">
+    <table ыенду="border-collapse: collapse;">
+      <tr>
+        <td>    <div class="field">
+          <label for="firstname">{{ getTranslation('FirstName') }}</label>
+          <input type="text" pInputText formControlName="firstname" class="w-full" name="firstname" placeholder="{{ getTranslation('Type your name') }}" />
+          <small *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="block p-error">
+            <div *ngIf="firstname.errors?.['required']">{{ getTranslation('Firstname is required.') }}</div>
+            <div *ngIf="firstname.errors?.['pattern']">{{ getTranslation('Enter a valid fistname.') }}</div>
+          </small>
+        </div></td>
+        <td>    <div class="field">
+          <label for="lastname">{{ getTranslation('Lastname') }}</label>
+          <input type="text" pInputText formControlName="lastname" class="w-full" name="lastname" placeholder="{{ getTranslation('Type your name') }}" />
+          <small *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="block p-error">
+            <div *ngIf="lastname.errors?.['required']">{{ getTranslation('Lastname is required.') }}</div>
+            <div *ngIf="lastname.errors?.['pattern']">{{ getTranslation('Enter a valid lastname.') }}</div>
+          </small>
+        </div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="field">
+            <label for="surname">{{ getTranslation('Surname') }}</label>
+            <input type="text" pInputText formControlName="surname" class="w-full" name="surname" placeholder="{{ getTranslation('Type your name') }}" />
+            <small *ngIf="surname.invalid && (surname.dirty || surname.touched)" class="block p-error">
+              <div *ngIf="surname.errors?.['required']">{{ getTranslation('Surname is required.') }}</div>
+              <div *ngIf="surname.errors?.['pattern']">{{ getTranslation('Enter a valid surname.') }}</div>
+            </small>
+          </div></td>
+        <td>    <div class="field">
+          <label for="email">{{ getTranslation('Email') }}</label>
+          <input type="text" pInputText formControlName="email" class="w-full" name="email" placeholder="{{ getTranslation('Type your email') }}" />
+          <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+            <div *ngIf="email.errors?.['required']">{{ getTranslation('Email is required.') }}</div>
+            <div *ngIf="email.errors?.['email']">{{ getTranslation('Email should be valid.') }}</div>
+          </small>
+        </div></td>
+      </tr>
+      <tr columnspan="2"><div class="field">
+        <label for="phone">{{ getTranslation('Phone') }}</label>
+        <input type="phone" pInputText formControlName="phone" class="w-full" name="phone" placeholder="{{ getTranslation('Type your phone') }}" />
+        <small *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="block p-error">
+          <div *ngIf="phone.errors?.['required']">{{ getTranslation('Phone is required.') }}</div>
+        </small>
+      </div></tr>
+      <tr>
+        <td>    <div class="field">
+          <label for="password">{{ getTranslation('Password') }}</label>
+          <input type="password" pInputText formControlName="password" class="w-full" name="password" placeholder="{{ getTranslation('Type your password') }}" />
+          <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+            <div *ngIf="password.errors?.['required']">{{ getTranslation('Password is required.') }}</div>
+          </small>
+        </div></td>
+        <td>    <div class="field">
+          <label for="confirmPassword">{{ getTranslation('Confirm Password') }}</label>
+          <input type="password" pInputText formControlName="confirmPassword" class="w-full" name="confirmPassword" placeholder="{{ getTranslation('Confirm Password') }}" />
+          <small *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="block p-error">
+            <div *ngIf="confirmPassword.errors?.['required']">{{ getTranslation('Confirm the password.') }}</div>
+          </small>
+          <small class="block p-error" *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid">
+            {{ getTranslation('Passwords should match.') }}
+          </small>
+        </div></td>
+      </tr>
+    </table>
+
+
+
+
+
+    <p-button label="{{ getTranslation('Create Account') }}" styleClass="w-full orange-button" [disabled]="registerForm.invalid" type="submit"></p-button>
+    <div class="mt-2">{{ getTranslation('Already have an account?') }} <a routerLink="/login" class="orange-link">{{ getTranslation('Sign in') }}</a></div>
+  </p-card>
+<div class="bottom-text">
+  <p class="gray-text">&copy;{{ getTranslation('Resources & Tools About Contact Connect') }}
+    <img src="assets/icons/vkontakte.png" alt="Logo" class="bottom-image">
+    <img src="assets/icons/telegram.png" alt="Logo" class="bottom-image">
+    <img src="assets/icons/instagram.png" alt="Logo" class="bottom-image">
+  </p>
+  <p class="gray-text">&copy;2024 SpeedWagon {{ getTranslation('Terms Privacy') }}</p>
+</div>
+</form>
+</div>

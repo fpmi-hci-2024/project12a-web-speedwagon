@@ -1,0 +1,35 @@
+<div class="landing-container">
+
+  <header class="landing-header">
+    <div class="dropdown">
+      <button class="button dropdown-button">Меню</button>
+      <div class="dropdown-menu">
+        <a href="#">Кнопка 1</a>
+        <a href="#">Кнопка 2</a>
+        <a href="#">Кнопка 3</a>
+      </div>
+    </div>
+    <a class="logo" routerLink="/search">SpeedWagon</a>
+      <table>
+        <tr>
+          <td><a class="button-t" routerLink="/search">{{ getTranslation('Find') }}</a></td>
+          <td><a class="button-t" routerLink="/routes">{{ getTranslation('Routes') }}</a></td>
+          <td><a class="button-t" routerLink="/reservations">{{ getTranslation('Reserved') }}</a></td>
+          <td><a class="profile-button" routerLink="/profile" *ngIf="isLoggedIn(); else loginButton">
+            <img
+              src="../../../assets/icons/profile.png"
+              alt="Профиль"
+              class="profile-icon"
+            />
+          </a>
+          <ng-template #loginButton>
+            <button class="button-t" (click)="logIn()">{{ getTranslation('Sign in') }}</button>
+          </ng-template> 
+        </td>
+        </tr>
+      </table>  
+  </header>
+  <div class="center-content">
+  <router-outlet></router-outlet>
+</div>
+</div>

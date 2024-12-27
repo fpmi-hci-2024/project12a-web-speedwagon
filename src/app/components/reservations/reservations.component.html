@@ -1,0 +1,91 @@
+<div class="center-content">
+<div class="container">
+    <h1>Поездки</h1>
+    <div class="tabs">
+        <button class="active" onclick="filterTrips('active')">Активные</button>
+        <button onclick="filterTrips('history')">История</button>
+        <button onclick="filterTrips('all')">Все</button>
+    </div>
+
+    <div id="trip-list"></div>
+</div>
+</div>
+<script>
+    const trips = [
+        {
+            date: '28 дек, сб',
+            timeStart: '07:30',
+            from: 'Минск',
+            stationFrom: 'Автовокзал ЦЕНТРАЛЬНЫЙ',
+            timeEnd: '10:50',
+            to: 'Могилёв',
+            stationTo: 'ост. 3-д им. Кирова',
+            duration: '3 ч 20 мин',
+            transport: 'Mercedes-Benz, Sprinter',
+            color: 'Серый',
+            plate: 'АК 9470-6',
+            status: 'Подтвержден'
+        },
+        {
+            date: '3 янв, пт',
+            timeStart: '08:35',
+            from: 'Могилёв',
+            stationFrom: 'ОСТ. КОЛЛЕДЖ ИСКУССТВ',
+            timeEnd: '11:45',
+            to: 'Минск',
+            stationTo: 'Автовокзал ЦЕНТРАЛЬНЫЙ',
+            duration: '3 ч 10 мин',
+            transport: 'Volkswagen, Crafter',
+            color: 'Белый',
+            plate: 'АК 0033-6',
+            status: 'Поездка оформлена'
+        }
+    ];
+
+    function generateTripHTML(trip) {
+        return `
+            <div class="trip-card">
+                <div class="trip-details">
+                    <p><strong>${trip.date}</strong></p>
+                    <p>${trip.timeStart} ${trip.from}</p>
+                    <p>${trip.stationFrom}</p>
+                    <p>${trip.timeEnd} ${trip.to}</p>
+                    <p>${trip.stationTo}</p>
+                    <p>${trip.duration}</p>
+                    <p>Транспорт: ${trip.transport}</p>
+                    <p>Цвет: ${trip.color}</p>
+                    <p>Номер: ${trip.plate}</p>
+                    <p>${trip.status}</p>
+                </div>
+                <button class="details-button" onclick="viewDetails(${JSON.stringify(trip).replace(/"/g, '&quot;')})">Детали</button>
+            </div>
+        `;
+    }
+
+    function displayTrips() {
+        const tripList = document.getElementById('trip-list');
+        tripList.innerHTML = trips.map(generateTripHTML).join('');
+    }
+
+    function viewDetails(trip) {
+        const tripList = document.getElementById('trip-list');
+        tripList.innerHTML = `
+            <div class="trip-card">
+                <h2>Детали поездки</h2>
+                <p><strong>${trip.date}</strong></p>
+                <p>${trip.timeStart} ${trip.from}</p>
+                <p>${trip.stationFrom}</p>
+                <p>${trip.timeEnd} ${trip.to}</p>
+                <p>${trip.stationTo}</p>
+                <p>${trip.duration}</p>
+                <p>Транспорт: ${trip.transport}</p>
+                <p>Цвет: ${trip.color}</p>
+                <p>Номер: ${trip.plate}</p>
+                <p>${trip.status}</p>
+                <button class="details-button" onclick="displayTrips()">Назад</button>
+            </div>
+        `;
+    }
+
+    displayTrips();
+</script>

@@ -1,0 +1,159 @@
+<table class="table">
+  <tr>
+<div class="landing-main">
+
+    <div class="search-section">
+      <input class="search-input" style="width: 18%" type="text" placeholder="Откуда?" />
+      <input class="search-input" style="width: 18%" type="text" placeholder="Куда?" />
+      <input class="search-input" style="width: 18%" type="date" />
+      <select class="search-input" style="width: 18%">
+        <option>1 {{ getTranslation('Passanger1') }}</option>
+        <option>2 {{ getTranslation('Passanger2-4') }}</option>
+        <option>3 {{ getTranslation('Passanger2-4') }}</option>
+        <option>4 {{ getTranslation('Passanger2-4') }}</option>
+        <option>5 {{ getTranslation('Passanger5-15') }}</option>
+        <option>6 {{ getTranslation('Passanger5-15') }}</option>
+        <option>7 {{ getTranslation('Passanger5-15') }}</option>
+        <option>8 {{ getTranslation('Passanger5-15') }}</option>
+        <option>9 {{ getTranslation('Passanger5-15') }}</option>
+        <option>10 {{ getTranslation('Passanger5-15') }}</option>
+        <option>11 {{ getTranslation('Passanger5-15') }}</option>
+        <option>12 {{ getTranslation('Passanger5-15') }}</option>
+        <option>13 {{ getTranslation('Passanger5-15') }}</option>
+        <option>14 {{ getTranslation('Passanger5-15') }}</option>
+        <option>15 {{ getTranslation('Passanger5-15') }}</option>
+      </select>
+      <button class="search-button" style="width: 20%">{{ getTranslation('Find') }}</button>
+    </div>
+  </div>
+</tr>
+  <tr>
+    <div class="app-info">
+
+      <table style="width: 40%; min-width: 800px;">
+        <tr columnspan="2">     <h2 style="text-align: center;">{{ getTranslation('Mobile-app') }}</h2>
+          <p style="text-align: center;">{{ getTranslation('text1') }}</p> </tr>
+        <tr>
+        <td><h3>{{ getTranslation('Economic') }}</h3>
+        <p>
+          {{ getTranslation('text2') }}
+        </p></td>
+        <td rowspan="3"><img style="display: block;"
+          src="../../../assets/mobile.png"
+          alt="Мобильное приложение"
+          class="app-image"
+        />
+        <img style="display: block;"
+        src="../../../assets/googleplay.webp"
+        alt="Google Play"
+        class="app-image"
+      />
+      <img style="display: block;"
+      src="../../../assets/appstore.webp"
+      alt="App Store"
+      class="app-image"
+    />
+  </td>
+      </tr>
+        <tr>
+          <td><h3>{{ getTranslation('Diverse-routes') }}</h3>
+            <p>
+              {{ getTranslation('text3') }}
+            </p></td>
+        </tr>
+        <tr>
+          <td><h3>{{ getTranslation('Support24/7') }}</h3>
+            <p>
+              {{ getTranslation('text4') }}
+            </p></td>
+        </tr>
+      </table>
+    </div>
+  </tr>
+<tr>
+
+  <footer class="landing-footer">
+    <div class="footer-links">
+      <div>
+        <h3 style="color: white; ">SpeedWagon</h3>
+        <ul style="color: white; ">
+          <li>{{ getTranslation('About-us') }}с</li>
+          <li>{{ getTranslation('Support') }}</li>
+          <li>{{ getTranslation('Privacy-policy') }}</li>
+          <li>{{ getTranslation('Contacts') }}</li>
+          <li>{{ getTranslation('Cookie-file') }}</li>
+          <li>{{ getTranslation('Terms-of-use') }}</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: white;">{{ getTranslation('Cooperation') }}</h3>
+        <ul style="color: white;">
+          <li>{{ getTranslation('Become-a-partner') }}</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color: white;">{{ getTranslation('Other') }}</h3>
+        <ul style="color: white;">
+          <li>{{ getTranslation('For drivers') }}</li>
+          <li>{{ getTranslation('Vacancies') }}</li>
+        </ul>
+      </div>
+      <div class="Social-icons">
+        <h3 style="color: white;">{{ getTranslation('Social-media') }}</h3>
+          <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/vkontakte.png"
+            alt="VK"
+            class="SN"/>
+          </a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/telegram.png"
+            alt="Telegram"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/youtube.png"
+            alt="YouTube"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/tiktok.png"
+            alt="Tiktok"
+            class="SN"
+          /></a> <a href="#" style="margin-left: 2px;"><img
+            src="../../../assets/icons/instagram.png"
+            alt="Instagram"
+            class="SN"
+          /></a>
+      </div>
+    </div>
+    <div style="  flex-grow: 1;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;"><div class="centered-line"></div></div>
+    
+
+    <table style="  flex-grow: 1;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;">
+    <tr><td>
+    <div style="color: white;"><p>{{ getTranslation('rights') }}</p></div>
+    </td><td>
+    <div class="language-container">
+      <button class="language-button2" (click)="toggleLanguageMenu()">
+        {{ getTranslation('Language') }}<img src="../../../assets/icons/triangle.png"
+        alt="Instagram"
+        style="width: 24px; height: 24px;"
+      />
+      </button>
+      <div *ngIf="showLanguageMenu" class="dropdown-menu">
+        <button class="language-button" (click)="changeLanguage('ru')">{{ getTranslation('Русский') }}</button>
+        <button class="language-button" (click)="changeLanguage('by')">{{ getTranslation('Белорусский') }}</button>
+        <button class="language-button" (click)="changeLanguage('en')">{{ getTranslation('English') }}</button>
+      </div>  
+    </div>
+    </td>
+    </tr>
+    </table>
+  </footer>
+</tr>
+</table>
