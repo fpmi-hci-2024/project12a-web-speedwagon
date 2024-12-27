@@ -57,3 +57,10 @@
   .result-container {
     margin-top: 10px;
   }
+
+  .center-content {
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }

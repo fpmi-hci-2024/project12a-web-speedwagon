@@ -50,3 +50,10 @@ margin-bottom: -5px;
 td {
   height: 100px;
 }
+
+.center-content {
+  margin-top: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
