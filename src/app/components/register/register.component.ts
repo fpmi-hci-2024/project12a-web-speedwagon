@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
-import { User } from 'src/app/interfaces/auth';
+import { User } from 'src/app/interfaces/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

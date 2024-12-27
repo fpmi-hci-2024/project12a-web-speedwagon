@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../interfaces/auth';
-import { User_login } from '../interfaces/user_login';
+import { User } from '../interfaces/models/User';
+import { LoginRequest } from '../interfaces/requests/users/LoginRequest';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +15,7 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/register`, userDetails);
   }
 
-  login(authRequest: User_login): Observable<any> {
+  login(authRequest: LoginRequest): Observable<any> {
     return this.http.post<User>(`${this.baseUrl}/login`, authRequest);
   }
 
