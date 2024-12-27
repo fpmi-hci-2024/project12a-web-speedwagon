@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
 
   logIn() {
     localStorage.clear();
-    console.log('fdsdsf')
     this.router.navigate(['/login']);
   }
 
@@ -53,5 +52,6 @@ export class HomeComponent implements OnInit {
 
   changePage(key: string){
     this.selectedPage = key;
+
   }
 }

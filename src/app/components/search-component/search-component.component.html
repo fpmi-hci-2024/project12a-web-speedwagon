@@ -7,21 +7,21 @@
       <input class="search-input" style="width: 18%" type="text" placeholder="Куда?" />
       <input class="search-input" style="width: 18%" type="date" />
       <select class="search-input" style="width: 18%">
-        <option>1 Пассажир</option>
-        <option>2 Пассажира</option>
-        <option>3 Пассажира</option>
-        <option>4 Пассажира</option>
-        <option>5 Пассажиров</option>
-        <option>6 Пассажиров</option>
-        <option>7 Пассажиров</option>
-        <option>8 Пассажиров</option>
-        <option>9 Пассажиров</option>
-        <option>10 Пассажиров</option>
-        <option>11 Пассажиров</option>
-        <option>12 Пассажиров</option>
-        <option>13 Пассажиров</option>
-        <option>14 Пассажиров</option>
-        <option>15 Пассажиров</option>
+        <option>1 {{ getTranslation('Passanger1') }}</option>
+        <option>2 {{ getTranslation('Passanger2-4') }}</option>
+        <option>3 {{ getTranslation('Passanger2-4') }}</option>
+        <option>4 {{ getTranslation('Passanger2-4') }}</option>
+        <option>5 {{ getTranslation('Passanger5-15') }}</option>
+        <option>6 {{ getTranslation('Passanger5-15') }}</option>
+        <option>7 {{ getTranslation('Passanger5-15') }}</option>
+        <option>8 {{ getTranslation('Passanger5-15') }}</option>
+        <option>9 {{ getTranslation('Passanger5-15') }}</option>
+        <option>10 {{ getTranslation('Passanger5-15') }}</option>
+        <option>11 {{ getTranslation('Passanger5-15') }}</option>
+        <option>12 {{ getTranslation('Passanger5-15') }}</option>
+        <option>13 {{ getTranslation('Passanger5-15') }}</option>
+        <option>14 {{ getTranslation('Passanger5-15') }}</option>
+        <option>15 {{ getTranslation('Passanger5-15') }}</option>
       </select>
       <button class="search-button" style="width: 20%">{{ getTranslation('Find') }}</button>
     </div>
@@ -31,25 +31,24 @@
     <div class="app-info">
 
       <table style="width: 40%; min-width: 800px;">
-        <tr columnspan="2">     <h2 style="text-align: center;">Доступно Мобильное Приложение</h2>
-          <p style="text-align: center;">Все ваши билеты прямо в телефоне!</p> </tr>
+        <tr columnspan="2">     <h2 style="text-align: center;">{{ getTranslation('Mobile-app') }}</h2>
+          <p style="text-align: center;">{{ getTranslation('text1') }}</p> </tr>
         <tr>
-        <td><h3>Экономия</h3>
+        <td><h3>{{ getTranslation('Economic') }}</h3>
         <p>
-          Наши технологии позволяют увеличивать эффективность работы наших
-          партнеров. Поэтому мы можем делать цены ниже.
+          {{ getTranslation('text2') }}
         </p></td>
-        <td rowspan="3"><img
+        <td rowspan="3"><img style="display: block;"
           src="../../../assets/mobile.png"
           alt="Мобильное приложение"
           class="app-image"
         />
-        <img
+        <img style="display: block;"
         src="../../../assets/googleplay.webp"
         alt="Google Play"
         class="app-image"
       />
-      <img
+      <img style="display: block;"
       src="../../../assets/appstore.webp"
       alt="App Store"
       class="app-image"
@@ -57,17 +56,15 @@
   </td>
       </tr>
         <tr>
-          <td><h3>Широкий выбор маршрутов</h3>
+          <td><h3>{{ getTranslation('Diverse-routes') }}</h3>
             <p>
-              От коротких маршрутов до дальних путешествий. Независимо от места
-              назначения — мы поможем найти идеального перевозчика.
+              {{ getTranslation('text3') }}
             </p></td>
         </tr>
         <tr>
-          <td><h3>Поддержка 24/7</h3>
+          <td><h3>{{ getTranslation('Support24/7') }}</h3>
             <p>
-              Напишите нам в чат или позвоните по телефону, наши операторы
-              ответят вам на все вопросы.
+              {{ getTranslation('text4') }}
             </p></td>
         </tr>
       </table>
@@ -80,29 +77,29 @@
       <div>
         <h3 style="color: white; ">SpeedWagon</h3>
         <ul style="color: white; ">
-          <li>О нас</li>
-          <li>Помощь</li>
-          <li>Политика конфиденциальности</li>
-          <li>Контакты</li>
-          <li>Настройка cookie-файлов</li>
-          <li>Условия пользования</li>
+          <li>{{ getTranslation('About-us') }}с</li>
+          <li>{{ getTranslation('Support') }}</li>
+          <li>{{ getTranslation('Privacy-policy') }}</li>
+          <li>{{ getTranslation('Contacts') }}</li>
+          <li>{{ getTranslation('Cookie-file') }}</li>
+          <li>{{ getTranslation('Terms-of-use') }}</li>
         </ul>
       </div>
       <div>
-        <h3 style="color: white;">Сотрудничество</h3>
+        <h3 style="color: white;">{{ getTranslation('Cooperation') }}</h3>
         <ul style="color: white;">
-          <li>Стать партнером</li>
+          <li>{{ getTranslation('Become-a-partner') }}</li>
         </ul>
       </div>
       <div>
-        <h3 style="color: white;">Прочее</h3>
+        <h3 style="color: white;">{{ getTranslation('Other') }}</h3>
         <ul style="color: white;">
-          <li>Для водителей</li>
-          <li>Вакансии</li>
+          <li>{{ getTranslation('For drivers') }}</li>
+          <li>{{ getTranslation('Vacancies') }}</li>
         </ul>
       </div>
       <div class="Social-icons">
-        <h3 style="color: white;">Социальные сети</h3>
+        <h3 style="color: white;">{{ getTranslation('Social-media') }}</h3>
           <a href="#" style="margin-left: 2px;"><img
             src="../../../assets/icons/vkontakte.png"
             alt="VK"
@@ -139,7 +136,7 @@
     display: flex;
     justify-content: center;">
     <tr><td>
-    <div style="color: white;"><p>2024 © SpeedWagon. Все права защищены.</p></div>
+    <div style="color: white;"><p>{{ getTranslation('rights') }}</p></div>
     </td><td>
     <div class="language-container">
       <button class="language-button2" (click)="toggleLanguageMenu()">

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CalculationService } from "../../services/calc.service";
-import {  Result, MatrixSum, Matrix, MatrixSub, MatrixMul, MatrixSystem, MatrixReverse, MatrixTranspose, MatrixMulByNum, MatrixDeterminant } from "../../interfaces/calculation";
 import { Router } from "@angular/router";
 import { LanguageService } from '../../services/language.service';
 import { Output, EventEmitter } from '@angular/core';
@@ -15,7 +13,6 @@ export class SearchComponent {
   showLanguageMenu: boolean = false;
   languageChanged: EventEmitter<string> = new EventEmitter<string>();
   constructor(
-    private calcService: CalculationService,
     private router: Router,
     private languageService: LanguageService
   ) { this.selectedLanguage = this.languageService.getLanguage();}

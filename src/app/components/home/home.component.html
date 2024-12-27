@@ -9,19 +9,19 @@
         <a href="#">Кнопка 3</a>
       </div>
     </div>
-    <button class="logo" (click)="changePage('S')">SpeedWagon</button>
+    <a class="logo" routerLink="/search">SpeedWagon</a>
       <table>
         <tr>
-          <td><button class="button-t" (click)="changePage('S')">Найти</button></td>
-          <td><button class="button-t" (click)="changePage('Ro')">Маршруты</button></td>
-          <td><button class="button-t" (click)="changePage('Re')">Запланированные поездки</button></td>
-          <td><button class="profile-button" (click)="changePage('P')" *ngIf="isLoggedIn(); else loginButton">
+          <td><a class="button-t" routerLink="/search">{{ getTranslation('Find') }}</a></td>
+          <td><a class="button-t" routerLink="/routes">{{ getTranslation('Routes') }}</a></td>
+          <td><a class="button-t" routerLink="/reservations">{{ getTranslation('Reserved') }}</a></td>
+          <td><a class="profile-button" routerLink="/profile" *ngIf="isLoggedIn(); else loginButton">
             <img
               src="../../../assets/icons/profile.png"
               alt="Профиль"
               class="profile-icon"
             />
-          </button>
+          </a>
           <ng-template #loginButton>
             <button class="button-t" (click)="logIn()">{{ getTranslation('Sign in') }}</button>
           </ng-template> 
@@ -29,10 +29,5 @@
         </tr>
       </table>  
   </header>
-  <div class="center-content" [ngSwitch]="selectedPage">
-    <span  *ngSwitchCase="'S'"><app-search-component ></app-search-component></span>
-    <span  *ngSwitchCase="'P'"><app-profile-component></app-profile-component></span>
-    <span  *ngSwitchCase="'Ro'"><app-routes-component></app-routes-component></span>
-    <span  *ngSwitchCase="'Re'"><app-reservations-component></app-reservations-component></span>
-  </div>
+  <router-outlet></router-outlet>
 </div>

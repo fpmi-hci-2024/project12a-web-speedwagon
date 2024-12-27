@@ -1,39 +1,20 @@
-<p>hi1</p>
-<!-- <div style="display: block"><table  class="math-table">
-  <tbody>
-    <tr>
-      <td>
-        <button class="btn-choice" (click)="changeCalc('BA')">{{ getTranslation('Basic arithmetics') }}</button>
-      </td>
-      <td>
-        <button class="btn-choice" (click)="changeCalc('Eq')">{{ getTranslation('Equations') }}</button>
-      </td>
-      <td>
-        <button class="btn-choice" (click)="changeCalc('M')">{{ getTranslation('Matrix') }}</button>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">
-        <div [ngSwitch]="selectedCalculations">
-          <span *ngSwitchCase="'BA'">
-            <app-basic-arithemtic-component (resultEvent)="showResult($event)"></app-basic-arithemtic-component>
-            </span>
-            <span *ngSwitchCase="'Eq'" >
-              <app-equation-component (resultEvent)="showResult($event)"></app-equation-component>
-              </span>
-            <span  *ngSwitchCase="'M'">           
-                <app-matrix-component (resultEventM)="showResult($event)"></app-matrix-component>
-            </span>
-          
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
+<div class="container">
+  <div class="profile-sidebar">
+      <h3>Профиль</h3>
+      <a href="#">Настройки</a>
+      <a href="#">Мои пассажиры</a>
+      <a href="#">Мои карты</a>
+      <a href="#">Мои мили</a>
+      <a href="#">Мой рейтинг</a>
+      <a href="#">Выйти</a>
+  </div>
 
-<div name="result" class="result-container" *ngIf="calculationResult !== ''">
-  <p>{{ getTranslation('Result') }}: {{ calculationResult }}</p>
-  <p>{{ getTranslation('Time') }}: {{ calculationTime }} {{ getTranslation('Sec') }}</p>
+  <div class="profile-content">
+      <h2>Профиль</h2>
+      <div class="phone">Телефон: +375 29 345 22 04</div>
+      <p class="description">
+          С помощью телефона мы сможем связаться с вами в случае отмены, переноса рейса или других ситуациях.
+      </p>
+  </div>
 </div>
-</div> -->

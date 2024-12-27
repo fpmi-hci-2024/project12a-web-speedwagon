@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './security/auth.guard';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { ProfileComponent } from './components/profile-component/profile-component.component';
+import { RoutesComponent } from './components/routes-component/routes-component.component';
+import { SearchComponent } from './components/search-component/search-component.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'routes',
+    component: RoutesComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   },
   {
     path: '**',
