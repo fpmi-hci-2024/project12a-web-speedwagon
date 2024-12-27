@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { passwordMatchValidator } from 'src/app/shared/password-match.directive';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LanguageService } from '../../services/language.service';
+import {RegisterRequest} from "../../interfaces/requests/RegisterRequest";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -79,7 +80,7 @@ getTranslation(key: string): string {
     const postData = { ...this.registerForm.value };
     delete postData.confirmPassword;
 
-    this.authService.registerUser(postData as User).subscribe(
+    this.authService.registerUser(postData as RegisterRequest).subscribe(
       response => {
         console.log(response);
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Registered successfully' });
